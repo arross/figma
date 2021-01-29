@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
+    // "module": "commonjs",
     "target": "es6",
+    "rootDir": "./",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "outDir": "dist",
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@figma"

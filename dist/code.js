@@ -1,6 +1,14 @@
+var thingShadow = require('aws-iot-device-sdk');
 // var awsIot =require('aws-iot-device-sdk')
-// This plugin creates 5 rectangles on the screen.
-const numberOfRectangles = 5;
+var basePath = "/Users/austin.ross/Downloads/connect_device_package/";
+var thingName = "CustomerThing";
+var thingShadows = new thingShadow({
+    keyPath: basePath + thingName + "-private.pem.key",
+    certPath: basePath + thingShadows + "-certificate.pem.crt",
+    caPath: basePath + "root-CA.cert",
+    clientId: "figma",
+    host: "a3bp85rmkw5xc1-ats.iot.us-east-1.amazonaws.com"
+});
 // This file holds the main code for the plugins. It has access to the *document*.
 // You can access browser APIs such as the network by creating a UI which contains
 // a full browser environment (see documentation).
@@ -34,15 +42,6 @@ figma.closePlugin();
 // to connect with a client identifier which is already in use, the existing
 // connection will be terminated.
 //
-var basePath = "/Users/austin.ross/Downloads/connect_device_package/";
-var thingName = "CustomerThing";
-var thingShadows = new thingShadow({
-    keyPath: basePath + thingName + "-private.pem.key",
-    certPath: basePath + thingShadows + "-certificate.pem.crt",
-    caPath: basePath + "root-CA.cert",
-    clientId: "figma",
-    host: "a3bp85rmkw5xc1-ats.iot.us-east-1.amazonaws.com"
-});
 //
 // Client token value returned from thingShadows.update() operation
 //
